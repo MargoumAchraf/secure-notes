@@ -72,12 +72,12 @@ class _NotesScreenState extends State<NotesScreen> {
     final confirm = await showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text(loc.deleteAllTitle),          // ✅
-        content: Text(loc.deleteAllConfirm),      // ✅
+        title: Text(loc.deleteAllTitle),          
+        content: Text(loc.deleteAllConfirm),     
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),
-            child: Text(loc.cancel),              // ✅
+            child: Text(loc.cancel),              
           ),
           TextButton(
             onPressed: () => Navigator.pop(context, true),
@@ -165,12 +165,12 @@ class _NotesScreenState extends State<NotesScreen> {
                           return await showDialog(
                             context: context,
                             builder: (context) => AlertDialog(
-                              title: Text(loc.deleteNoteTitle),    // ✅
-                              content: Text(loc.deleteNoteConfirm), // ✅
+                              title: Text(loc.deleteNoteTitle),   
+                              content: Text(loc.deleteNoteConfirm),
                               actions: [
                                 TextButton(
                                   onPressed: () => Navigator.pop(context, false),
-                                  child: Text(loc.cancel),         // ✅
+                                  child: Text(loc.cancel),         
                                 ),
                                 TextButton(
                                   onPressed: () => Navigator.pop(context, true),
@@ -185,7 +185,7 @@ class _NotesScreenState extends State<NotesScreen> {
                             await db.deleteNote(note.id!);
                             loadNotes();
                             ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text(loc.noteDeleted)), // ✅
+                              SnackBar(content: Text(loc.noteDeleted)), 
                             );
                           }
                         },
