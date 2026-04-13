@@ -1,0 +1,17 @@
+{
+  "appTitle": "ملاحظات آمنة",
+  "unlockWithBiometrics": "فتح باستخدام البصمة",
+  "authReason": "يرجى المصادقة لعرض ملاحظاتك",
+  "authFailed": "فشل المصادقة",
+  "noNotes": "لا توجد ملاحظات بعد. اضغط على + لإضافة واحدة!",
+  "addNote": "إضافة ملاحظة",
+  "editNote": "تعديل الملاحظة",
+  "title": "العنوان",
+  "description": "الوصف",
+  "date": "التاريخ",
+  "enterTitle": "يرجى إدخال عنوان",
+  "enterDescription": "يرجى إدخال وصف",
+  "save": "حفظ",
+  "updateChanges": "تحديث التغييرات",
+  "delete": "حذف"
+}

@@ -1,0 +1,17 @@
+{
+  "appTitle": "Secure Notes",
+  "unlockWithBiometrics": "Unlock with Biometrics",
+  "authReason": "Please authenticate to view your notes",
+  "authFailed": "Authentication Failed",
+  "noNotes": "No notes yet. Tap + to add one!",
+  "addNote": "Add Note",
+  "editNote": "Edit Note",
+  "title": "Title",
+  "description": "Description",
+  "date": "Date",
+  "enterTitle": "Please enter a title",
+  "enterDescription": "Please enter a description",
+  "save": "SAVE",
+  "updateChanges": "UPDATE CHANGES",
+  "delete": "Delete"
+}
