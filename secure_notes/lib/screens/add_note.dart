@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:securenotes/l10n/app_localizations.dart';
 import '../models/note.dart';
 import '../services/database_service.dart';
 
@@ -32,8 +33,10 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
+
     return Scaffold(
-      appBar: AppBar(title: const Text("Add Note")),
+      appBar: AppBar(title: Text(loc.addNote)),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Form(
@@ -43,10 +46,10 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
               // TITLE
               TextFormField(
                 controller: titleController,
-                decoration: const InputDecoration(labelText: "Title"),
+                decoration: InputDecoration(labelText: loc.title),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
-                    return "Title is required";
+                    return loc.enterTitle;
                   }
                   return null;
                 },
@@ -57,10 +60,10 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
               // DESCRIPTION
               TextFormField(
                 controller: descriptionController,
-                decoration: const InputDecoration(labelText: "Description"),
+                decoration: InputDecoration(labelText: loc.description),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
-                    return "Description is required";
+                    return loc.enterDescription;
                   }
                   return null;
                 },
@@ -68,7 +71,10 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
 
               const SizedBox(height: 20),
 
-              ElevatedButton(onPressed: saveNote, child: const Text("Save")),
+              ElevatedButton(
+                onPressed: saveNote,
+                child: Text(loc.save),
+              ),
             ],
           ),
         ),

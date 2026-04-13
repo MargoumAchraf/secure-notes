@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:securenotes/l10n/app_localizations.dart';
 import '../models/note.dart';
 import '../services/database_service.dart';
 
@@ -22,11 +23,8 @@ class _EditNoteScreenState extends State<EditNoteScreen> {
   @override
   void initState() {
     super.initState();
-
     titleController = TextEditingController(text: widget.note.title);
-    descriptionController = TextEditingController(
-      text: widget.note.description,
-    );
+    descriptionController = TextEditingController(text: widget.note.description);
   }
 
   void updateNote() async {
@@ -38,43 +36,38 @@ class _EditNoteScreenState extends State<EditNoteScreen> {
           description: descriptionController.text,
         ),
       );
-
       Navigator.pop(context, true);
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
+
     return Scaffold(
-      appBar: AppBar(title: const Text("Edit Note")),
+      appBar: AppBar(title: Text(loc.editNote)),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Form(
           key: _formKey,
           child: Column(
             children: [
-              // TITLE
               TextFormField(
                 controller: titleController,
-                decoration: const InputDecoration(labelText: "Title"),
+                decoration: InputDecoration(labelText: loc.title),
                 validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return "Title is required";
-                  }
+                  if (value == null || value.isEmpty) return loc.enterTitle;
                   return null;
                 },
               ),
 
               const SizedBox(height: 16),
 
-              // DESCRIPTION
               TextFormField(
                 controller: descriptionController,
-                decoration: const InputDecoration(labelText: "Description"),
+                decoration: InputDecoration(labelText: loc.description),
                 validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return "Description is required";
-                  }
+                  if (value == null || value.isEmpty) return loc.enterDescription;
                   return null;
                 },
               ),
@@ -83,7 +76,7 @@ class _EditNoteScreenState extends State<EditNoteScreen> {
 
               ElevatedButton(
                 onPressed: updateNote,
-                child: const Text("Update"),
+                child: Text(loc.updateChanges),
               ),
             ],
           ),

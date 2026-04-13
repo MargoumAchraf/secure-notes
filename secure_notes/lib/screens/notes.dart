@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:securenotes/screens/add_note.dart';
 import 'package:securenotes/screens/update_note.dart';
 import 'package:securenotes/l10n/app_localizations.dart';
-import 'package:securenotes/screens/locale_provider.dart'; // ✅ only this added
+import 'package:securenotes/screens/locale_provider.dart';
 import '../models/note.dart';
 import '../services/database_service.dart';
 
@@ -47,18 +47,18 @@ class _NotesScreenState extends State<NotesScreen> {
               ),
               const SizedBox(height: 16),
               ListTile(
-                leading: const Text('🇬🇧', style: TextStyle(fontSize: 24)),
+               
                 title: const Text('English'),
                 onTap: () {
-                  localeNotifier.value = const Locale('en'); // ✅
+                  localeNotifier.value = const Locale('en'); 
                   Navigator.pop(context);
                 },
               ),
               ListTile(
-                leading: const Text('🇸🇦', style: TextStyle(fontSize: 24)),
+               
                 title: const Text('العربية'),
                 onTap: () {
-                  localeNotifier.value = const Locale('ar'); // ✅
+                  localeNotifier.value = const Locale('ar'); 
                   Navigator.pop(context);
                 },
               ),
@@ -135,7 +135,7 @@ class _NotesScreenState extends State<NotesScreen> {
                   children: [
                     IconButton(
                       icon: const Icon(Icons.language, color: Colors.white),
-                      onPressed: showLanguagePicker, // ✅
+                      onPressed: showLanguagePicker, 
                     ),
                     IconButton(
                       icon: const Icon(Icons.delete_forever, color: Colors.white),
