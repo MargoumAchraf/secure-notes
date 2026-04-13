@@ -52,4 +52,25 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get delete => 'حذف';
+
+  @override
+  String get deleteAllTitle => 'حذف جميع الملاحظات';
+
+  @override
+  String get deleteAllConfirm => 'هل أنت متأكد أنك تريد حذف جميع الملاحظات؟';
+
+  @override
+  String get deleteNoteTitle => 'حذف الملاحظة';
+
+  @override
+  String get deleteNoteConfirm => 'هل أنت متأكد أنك تريد حذف هذه الملاحظة؟';
+
+  @override
+  String get cancel => 'إلغاء';
+
+  @override
+  String get allNotesDeleted => 'تم حذف جميع الملاحظات';
+
+  @override
+  String get noteDeleted => 'تم حذف الملاحظة';
 }

@@ -47,18 +47,16 @@ class _NotesScreenState extends State<NotesScreen> {
               ),
               const SizedBox(height: 16),
               ListTile(
-               
                 title: const Text('English'),
                 onTap: () {
-                  localeNotifier.value = const Locale('en'); 
+                  localeNotifier.value = const Locale('en');
                   Navigator.pop(context);
                 },
               ),
               ListTile(
-               
                 title: const Text('العربية'),
                 onTap: () {
-                  localeNotifier.value = const Locale('ar'); 
+                  localeNotifier.value = const Locale('ar');
                   Navigator.pop(context);
                 },
               ),
@@ -74,12 +72,12 @@ class _NotesScreenState extends State<NotesScreen> {
     final confirm = await showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text(loc.delete),
-        content: const Text("Are you sure you want to delete all notes?"),
+        title: Text(loc.deleteAllTitle),          // ✅
+        content: Text(loc.deleteAllConfirm),      // ✅
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),
-            child: const Text("Cancel"),
+            child: Text(loc.cancel),              // ✅
           ),
           TextButton(
             onPressed: () => Navigator.pop(context, true),
@@ -93,7 +91,7 @@ class _NotesScreenState extends State<NotesScreen> {
       await db.deleteAllNotes();
       loadNotes();
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("All notes deleted")),
+        SnackBar(content: Text(loc.allNotesDeleted)), // ✅
       );
     }
   }
@@ -135,7 +133,7 @@ class _NotesScreenState extends State<NotesScreen> {
                   children: [
                     IconButton(
                       icon: const Icon(Icons.language, color: Colors.white),
-                      onPressed: showLanguagePicker, 
+                      onPressed: showLanguagePicker,
                     ),
                     IconButton(
                       icon: const Icon(Icons.delete_forever, color: Colors.white),
@@ -167,14 +165,12 @@ class _NotesScreenState extends State<NotesScreen> {
                           return await showDialog(
                             context: context,
                             builder: (context) => AlertDialog(
-                              title: Text(loc.delete),
-                              content: const Text(
-                                "Are you sure you want to delete this note?",
-                              ),
+                              title: Text(loc.deleteNoteTitle),    // ✅
+                              content: Text(loc.deleteNoteConfirm), // ✅
                               actions: [
                                 TextButton(
                                   onPressed: () => Navigator.pop(context, false),
-                                  child: const Text("Cancel"),
+                                  child: Text(loc.cancel),         // ✅
                                 ),
                                 TextButton(
                                   onPressed: () => Navigator.pop(context, true),
@@ -189,7 +185,7 @@ class _NotesScreenState extends State<NotesScreen> {
                             await db.deleteNote(note.id!);
                             loadNotes();
                             ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(content: Text("Note deleted")),
+                              SnackBar(content: Text(loc.noteDeleted)), // ✅
                             );
                           }
                         },

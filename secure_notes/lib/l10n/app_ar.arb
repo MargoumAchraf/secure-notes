@@ -13,6 +13,12 @@
   "enterDescription": "يرجى إدخال وصف",
   "save": "حفظ",
   "updateChanges": "تحديث التغييرات",
-  "delete": "حذف"
-  
+  "delete": "حذف",
+  "deleteAllTitle": "حذف جميع الملاحظات",
+  "deleteAllConfirm": "هل أنت متأكد أنك تريد حذف جميع الملاحظات؟",
+  "deleteNoteTitle": "حذف الملاحظة",
+  "deleteNoteConfirm": "هل أنت متأكد أنك تريد حذف هذه الملاحظة؟",
+  "cancel": "إلغاء",
+  "allNotesDeleted": "تم حذف جميع الملاحظات",
+  "noteDeleted": "تم حذف الملاحظة"
 }

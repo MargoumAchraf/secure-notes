@@ -13,5 +13,12 @@
   "enterDescription": "Please enter a description",
   "save": "SAVE",
   "updateChanges": "UPDATE CHANGES",
-  "delete": "Delete"
+  "delete": "Delete",
+  "deleteAllTitle": "Delete All Notes",
+  "deleteAllConfirm": "Are you sure you want to delete all notes?",
+  "deleteNoteTitle": "Delete Note",
+  "deleteNoteConfirm": "Are you sure you want to delete this note?",
+  "cancel": "Cancel",
+  "allNotesDeleted": "All notes deleted",
+  "noteDeleted": "Note deleted"
 }

@@ -52,4 +52,25 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get delete => 'Delete';
+
+  @override
+  String get deleteAllTitle => 'Delete All Notes';
+
+  @override
+  String get deleteAllConfirm => 'Are you sure you want to delete all notes?';
+
+  @override
+  String get deleteNoteTitle => 'Delete Note';
+
+  @override
+  String get deleteNoteConfirm => 'Are you sure you want to delete this note?';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get allNotesDeleted => 'All notes deleted';
+
+  @override
+  String get noteDeleted => 'Note deleted';
 }
