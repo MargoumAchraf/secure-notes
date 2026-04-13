@@ -5,8 +5,8 @@ import 'package:secure_notes/src/AuthScreen.dart';
 import 'package:secure_notes/model/Database.dart';
 
 void main() async {
-   WidgetsFlutterBinding.ensureInitialized(); // 👈 required for DB init
-  await DatabaseHelper.instance.database; 
+  WidgetsFlutterBinding.ensureInitialized(); // 👈 required for DB init
+  await DatabaseHelper.instance.database;
   runApp(const MyApp());
 }
 
@@ -17,17 +17,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // Add these three lines:
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: const [
-        Locale('en'),
-        
-      ],
+      locale: _locale,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       home: const AuthScreen(),
     );
   }
