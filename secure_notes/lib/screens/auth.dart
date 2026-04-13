@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';
-import 'package:secure_notes/src/HomePage.dart';
-import 'package:secure_notes/l10n/app_localizations.dart';
+import 'package:securenotes/l10n/app_localizations.dart';
+import 'package:securenotes/screens/notes.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
@@ -53,7 +53,7 @@ void initState() {
       if (authenticated) {
         Navigator.of(
           context,
-        ).pushReplacement(MaterialPageRoute(builder: (_) => const HomePage()));
+        ).pushReplacement(MaterialPageRoute(builder: (_) => const NotesScreen()));
       } else {
         setState(() => _message = l10n.authFailed);
       }
